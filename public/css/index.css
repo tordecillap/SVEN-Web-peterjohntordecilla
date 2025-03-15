@@ -1,0 +1,165 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #ffcc00;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.section {
+    padding: 120px 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero {
+    background: url('../../hero-bg.jpg') center/cover no-repeat;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about-content,
+.about-images {
+    flex: 1;
+    max-width: 400px;
+}
+
+.about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.about-images img {
+    width: 100%;
+    height: auto;
+}
+
+.appointment {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #f8f8f8;
+    padding: 50px;
+}
+
+.appointmentLeft {
+    flex: 1;
+    max-width: 400px;
+    text-align: left;
+}
+
+.appointment-form {
+    flex: 1;
+    max-width: 400px;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .appointment {
+        flex-direction: column;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 50px;
+        background: #ffcc00;
+        padding: 10px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
